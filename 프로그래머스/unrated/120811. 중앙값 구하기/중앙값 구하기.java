@@ -5,7 +5,7 @@ class Solution {
         int answer = 0;
         
         Arrays.sort(array);
-        answer = array[Math.round(array.length) / 2];
+        answer = array[array.length/2];
         
         return answer;
     }
