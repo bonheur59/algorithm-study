@@ -1,15 +1,15 @@
-import java.util.Arrays;
-import java.util.stream.Stream;
-
+import java.util.*;
 class Solution {
     public int solution(int n) {
         int answer = 0;
-
-        int[] digits = Stream.of(String.valueOf(n).split("")).mapToInt(Integer::parseInt).toArray();
-        for(int i : digits){
-            answer += i;
+        
+        String num =  Integer.toString(n);
+        
+        for(int i=0; i< num.length(); i++){
+            answer += num.charAt(i) - '0';
         }
-
+        
+        
         return answer;
     }
 }
