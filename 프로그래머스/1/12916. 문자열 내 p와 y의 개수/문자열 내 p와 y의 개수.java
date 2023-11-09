@@ -5,9 +5,7 @@ class Solution {
         boolean answer = true;
         int pCnt= 0;
         int yCnt = 0;
-        
-        // String keyword = s.toLowerCase();
-        
+                
         for(char x : s.toCharArray()){
             if (Character.toLowerCase(x) == 'p'){
                 pCnt++;
@@ -16,9 +14,7 @@ class Solution {
                 yCnt++;
             }
         }
-        
         answer = (pCnt == yCnt) ? true : false ;
-
 
         return answer;
     }
