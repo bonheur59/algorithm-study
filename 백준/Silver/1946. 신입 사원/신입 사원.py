@@ -1,12 +1,35 @@
 import sys
-T = int(sys.stdin.readline())
-for _ in range(T):
-    N = int(sys.stdin.readline())
-    rank = sorted([list(map(int, sys.stdin.readline().strip().split())) for _ in range(N)]) # 서류를 기준으로 정렬
-    cnt = 1
-    second_rank = rank[0][1]
-    for i in range(1,N):
-        if rank[i][1] < second_rank: # 면접 순위가 이전사람들보다 높으면
-            cnt += 1 # 횟수 증가
-            second_rank = rank[i][1]
-    print(cnt)
+input = sys.stdin.readline
+
+t = int(input())
+
+for _ in range(t):
+    n = int(input())
+    item = [list(map(int, input().strip().split())) for _ in range(n)]
+    item.sort()
+
+    count = 1
+    standard = item[0][1]
+    for i in range(1, len(item)):
+        if item[i][1] < standard:
+            count += 1
+            standard = item[i][1]
+    print(count)
+
+
+
+# 겹치지 않고, 오름차순이든 내림차순이든
+# a와 b를 비교했을 때, a가 더 크면 b는 더 작아야 함
+# 5 5  => x
+# 4 1   => 0
+# 3 2
+# 2 3
+# 1 4
+#
+# 7 3       => x
+# 6 1
+# 5 7       => x
+# 4 2
+# 3 6       => x
+# 2 5       => x
+# 1 4               =>
